@@ -1,133 +1,96 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #000000; /* Черный фон */
-    color: #fff;
-    overflow-x: hidden;
-    background: linear-gradient(135deg, #ff007f, #8a2be2); /* Розовый и фиолетовый градиент */
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.fog-background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at 50% 30%, rgba(255, 0, 255, 0.08), transparent 70%);
+  animation: fogAnimation 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes fogAnimation {
+  0% { transform: translate(0, 0); opacity: 0.4; }
+  50% { transform: translate(10px, -10px); opacity: 0.6; }
+  100% { transform: translate(0, 0); opacity: 0.4; }
 }
 
 header {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    padding: 50px 0;
-    position: relative;
+  text-align: center;
+  padding: 40px 20px;
+  z-index: 1;
+  position: relative;
 }
 
-header .cyberpunk-header {
-    font-size: 3rem;
-    color: #ff007f; /* Неоновый розовый */
-    text-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f; /* Эффект неона */
-    letter-spacing: 2px;
+.neon-title {
+  font-size: 2.8em;
+  color: #fff;
+  text-shadow: 0 0 10px #d633ff, 0 0 20px #a600ff, 0 0 30px #ff66ff;
 }
 
-.container {
-    position: relative;
-    z-index: 2;
+.main-content {
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
 }
 
-section {
-    padding: 50px 0;
-    margin: 0 15%;
-}
-
-.intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    padding: 40px 20px;
+.section-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
 }
 
 .left-block, .right-block {
-    width: 45%;
+  flex: 1 1 300px;
+  background-color: rgba(40, 0, 60, 0.3);
+  padding: 20px;
+  border: 2px solid #d633ff;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #d633ff;
 }
 
-.left-block p, .right-block ul {
-    font-size: 1.2rem;
-    margin-top: 20px;
+.center-logo {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-.cyberpunk-subheader {
-    font-size: 2.5rem;
-    color: #ff007f;
-    text-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f;
-    margin-bottom: 20px;
+.center-logo img {
+  max-width: 160px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ff00ff44;
 }
 
-.right-block ul {
-    list-style-type: none;
-    padding-left: 0;
+.neon-subtitle {
+  font-size: 1.6em;
+  color: #fff;
+  text-shadow: 0 0 8px #ff33ff, 0 0 12px #ff99ff;
+  margin-bottom: 15px;
 }
 
-.right-block li {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.logo-center {
-    width: 10%;
-    text-align: center;
-}
-
-.logo-center .logo {
-    width: 100%;
-    filter: brightness(0) saturate(100%) invert(23%) sepia(96%) saturate(612%) hue-rotate(354deg) brightness(104%) contrast(104%);
-}
-
-footer {
-    background-color: #1a1a1a;
-    text-align: center;
-    padding: 20px;
-    color: #fff;
-    font-size: 1rem;
-}
-
-.about {
-    text-align: center;
-}
-
-.about p {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    margin-top: 20px;
-}
-
-/* Эффект подсветки лампы на заголовки */
-section h2 {
-    position: relative;
-    z-index: 2;
-    font-size: 3rem;
-    color: #ff007f;
-    text-shadow: 0 0 15px #ff007f, 0 0 25px #ff007f;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-section h2::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    filter: blur(10px);
-    z-index: -1;
-    animation: lightbeam 2s ease-in-out infinite;
-}
-
-@keyframes lightbeam {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
+.about-section {
+  margin-top: 30px;
+  background-color: rgba(255, 255, 255, 0.02);
+  padding: 30px;
+  border: 1px solid #9a00cc;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #660066;
 }
