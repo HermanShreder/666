@@ -1,96 +1,53 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>X6 Studio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="lang-switch">
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('de')">DE</button>
+    </div>
+    <h1 class="neon" data-lang="title">Модельное агентство X6 Studio</h1>
+  </header>
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #000;
-  color: #fff;
-  overflow-x: hidden;
-  position: relative;
-}
+  <main>
+    <section class="top-section">
+      <div class="text-block left">
+        <h2 data-lang="left_title">Твой лучший выбор</h2>
+        <p data-lang="left_text">
+          Получи возможность изменить свою жизнь. Агентство X6 приглашает тебя на отбор моделей OnlyFans.
+        </p>
+      </div>
 
-.fog-background {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: radial-gradient(circle at 50% 30%, rgba(255, 0, 255, 0.08), transparent 70%);
-  animation: fogAnimation 15s ease-in-out infinite;
-  z-index: 0;
-}
+      <div class="logo-center">
+        <img src="images/logo.png" alt="X6 Studio Logo" />
+      </div>
 
-@keyframes fogAnimation {
-  0% { transform: translate(0, 0); opacity: 0.4; }
-  50% { transform: translate(10px, -10px); opacity: 0.6; }
-  100% { transform: translate(0, 0); opacity: 0.4; }
-}
+      <div class="text-block right">
+        <h2 data-lang="right_title">Стать действительно счастливой</h2>
+        <ul>
+          <li>💬 <span data-lang="s1">Поддержка 24/7</span></li>
+          <li>💰 <span data-lang="s2">Высокий %</span></li>
+          <li>🔐 <span data-lang="s3">Безопасность</span></li>
+          <li>🧠 <span data-lang="s4">Только опытные операторы</span></li>
+          <li>🛫 <span data-lang="s5">Переезд в США</span></li>
+        </ul>
+      </div>
+    </section>
 
-header {
-  text-align: center;
-  padding: 40px 20px;
-  z-index: 1;
-  position: relative;
-}
-
-.neon-title {
-  font-size: 2.8em;
-  color: #fff;
-  text-shadow: 0 0 10px #d633ff, 0 0 20px #a600ff, 0 0 30px #ff66ff;
-}
-
-.main-content {
-  padding: 40px 20px;
-  position: relative;
-  z-index: 1;
-}
-
-.section-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 40px;
-}
-
-.left-block, .right-block {
-  flex: 1 1 300px;
-  background-color: rgba(40, 0, 60, 0.3);
-  padding: 20px;
-  border: 2px solid #d633ff;
-  border-radius: 15px;
-  box-shadow: 0 0 10px #d633ff;
-}
-
-.center-logo {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
-
-.center-logo img {
-  max-width: 160px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0 0 20px #ff00ff44;
-}
-
-.neon-subtitle {
-  font-size: 1.6em;
-  color: #fff;
-  text-shadow: 0 0 8px #ff33ff, 0 0 12px #ff99ff;
-  margin-bottom: 15px;
-}
-
-.about-section {
-  margin-top: 30px;
-  background-color: rgba(255, 255, 255, 0.02);
-  padding: 30px;
-  border: 1px solid #9a00cc;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #660066;
-}
+    <section class="about-section">
+      <h2 data-lang="about_title">О агентстве X6 Studio</h2>
+      <p data-lang="about_text">
+        Мы – профессиональная команда, которая поможет тебе реализовать себя на OnlyFans. У нас – индивидуальный подход и реальные возможности для роста.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
