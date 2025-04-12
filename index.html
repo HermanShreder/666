@@ -49,5 +49,34 @@
       </p>
     </section>
   </main>
+
+  <!-- Добавляем проверку анимации с помощью JS -->
+  <script>
+    window.addEventListener('load', () => {
+      const styleSheets = document.styleSheets;
+
+      let isFogAnimationFound = false;
+
+      // Проходим по всем стилям на странице и ищем нужную анимацию
+      for (let sheet of styleSheets) {
+        if (sheet.cssRules) {
+          for (let rule of sheet.cssRules) {
+            // Проверяем, есть ли правило @keyframes с названием 'fogMove'
+            if (rule.name === 'fogMove') {
+              isFogAnimationFound = true;
+              break;
+            }
+          }
+        }
+      }
+
+      // Проверяем, если анимация существует
+      if (!isFogAnimationFound) {
+        console.error('Ошибка: Анимация "fogMove" не найдена в CSS.');
+      } else {
+        console.log('Анимация "fogMove" успешно загружена.');
+      }
+    });
+  </script>
 </body>
 </html>
